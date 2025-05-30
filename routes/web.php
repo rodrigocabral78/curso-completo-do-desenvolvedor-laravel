@@ -1,15 +1,12 @@
 <?php
 
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\HomePageController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    // return view('welcome');
-    return 'Olá, Mundo!';
-});
+Route::get('/', HomePageController::class.'@index');
 
-Route::get('/sobre', function () {
-    return 'Sobre nós';
-});
-Route::get('/contato', function () {
-    return 'Entre em contato';
-});
+Route::get('/sobre', AboutController::class.'@index');
+
+Route::get('/contato', ContactController::class.'@index');
